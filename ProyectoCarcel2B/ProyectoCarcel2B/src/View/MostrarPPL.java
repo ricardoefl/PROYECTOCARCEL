@@ -1,14 +1,12 @@
 package View;
-
 import Controller.SistemaAdministracionCarcel;
 import Model.PPL;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.util.ArrayList;
 public class MostrarPPL extends javax.swing.JPanel {
-    public MostrarPPL() {
+    private PPL ppl;
+    public MostrarPPL(String cedula) {
         initComponents();
+        buscarPPL(cedula);
+        mostrarPPL();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -16,29 +14,36 @@ public class MostrarPPL extends javax.swing.JPanel {
 
         inicial = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        cuadrito = new javax.swing.JTextArea();
 
         inicial.setBackground(new java.awt.Color(102, 153, 255));
         inicial.setBorder(new javax.swing.border.MatteBorder(null));
         inicial.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("AQUI VA EL PPL QUE SE BUSCA");
-        jScrollPane1.setViewportView(jTextArea1);
+        cuadrito.setBackground(new java.awt.Color(102, 153, 255));
+        cuadrito.setColumns(20);
+        cuadrito.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        cuadrito.setForeground(new java.awt.Color(0, 0, 0));
+        cuadrito.setRows(5);
+        cuadrito.setText("\n");
+        cuadrito.setBorder(null);
+        jScrollPane1.setViewportView(cuadrito);
 
         javax.swing.GroupLayout inicialLayout = new javax.swing.GroupLayout(inicial);
         inicial.setLayout(inicialLayout);
         inicialLayout.setHorizontalGroup(
             inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+            .addGroup(inicialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(469, Short.MAX_VALUE))
         );
         inicialLayout.setVerticalGroup(
             inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addGroup(inicialLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -52,11 +57,21 @@ public class MostrarPPL extends javax.swing.JPanel {
             .addComponent(inicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    public void mostrarPPL(){
+        if(this.ppl!=null){
+            cuadrito.setText(this.ppl.toString());
+        }else{
+            cuadrito.setText("PPL NO ENCONTRADO");
+        }
+    }
+    public void buscarPPL(String cedula){
+        SistemaAdministracionCarcel sistema = new SistemaAdministracionCarcel();
+        this.ppl = sistema.buscarPPL(cedula);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea cuadrito;
     private javax.swing.JPanel inicial;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

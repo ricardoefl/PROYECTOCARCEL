@@ -32,12 +32,21 @@ public class PPL extends Persona{
         this.delitoCometido = delitoCometido;
         this.visitasSemanales = visitasSemanales;
     }
-    
-    //TOSTRING PARA PRUEBAS
     @Override
     public String toString() {
-        return "PPL{" + "numPPL=" + numPPL + ", alias=" + alias + ", clasificacion=" + clasificacion + ", celda=" + celda + ", pabellon=" + pabellon + ", fechaIngreso=" + fechaIngreso + ", fechaSalida=" + fechaSalida + ", penaAsignada=" + penaAsignada + ", aniosRestantes=" + aniosRestantes + ", delitoCometido=" + delitoCometido + ", visitasSemanales=" + visitasSemanales + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("NUMERO: ").append(numPPL).append("\n");
+        sb.append("ALIAS: ").append(alias).append("\n");
+        sb.append("CLASIFICACION: ").append(clasificacion).append("\n");
+        sb.append("CELDA: ").append(celda).append("\n");
+        sb.append("PABELLON: ").append(pabellon).append("\n");
+        sb.append("FECHA DE INGRESO: ").append(fechaIngreso).append("\n");
+        sb.append("FECHA DE SALIDA: ").append(fechaSalida).append("\n");
+        sb.append("PENA ASIGNADA: ").append(penaAsignada).append("\n");
+        sb.append("ANIOS RESTANTES: ").append(aniosRestantes).append("\n");
+        sb.append("DELITO COMETIDO: ").append(delitoCometido).append("\n");
+        sb.append("VISITAS SEMANALES: ").append(visitasSemanales);
+        return sb.toString();
     }
-    
-    
+       
 }

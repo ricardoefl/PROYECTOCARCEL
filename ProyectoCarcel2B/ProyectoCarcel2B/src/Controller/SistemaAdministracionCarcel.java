@@ -9,10 +9,18 @@ public class SistemaAdministracionCarcel {
     protected ArrayList<Pabellon> listaPabellones;
 
     //CONSTRUCTOR
-
     public SistemaAdministracionCarcel() {
         this.listaPabellones = new ArrayList<>();
         clasificarxPabellonDB();
+    }
+    //BUSCAR PPL
+    public PPL buscarPPL(String cedula){
+        for(PPL ppl : getLstPPL()){
+            if(ppl.cedula.equalsIgnoreCase(cedula)){
+                return ppl;
+            }
+        }
+        return null;
     }
     //METER A LOS PPL EN SUS RESPECTIVOS PPL
     public void clasificarxPabellonDB() {
