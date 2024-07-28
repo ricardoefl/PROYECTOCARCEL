@@ -13,6 +13,10 @@ public class SistemaAdministracionCarcel {
         this.listaPabellones = new ArrayList<>();
         clasificarxPabellonDB();
     }
+    //INGRESAR UN PPL A LA BASE DE DATOS:
+    public void insertarPPL(PPL ppl){
+        (new ConeccionDB()).insertarPPL(ppl);
+    }
     //BUSCAR PPL
     public PPL buscarPPL(String cedula){
         for(PPL ppl : getLstPPL()){
