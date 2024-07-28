@@ -25,12 +25,17 @@ public class EmpleadoSeguridad extends Empleado{
         this.limitanteFisico = limitanteFisico;
         this.equipoProteccion = equipoProteccion;
     }   
-
     @Override
     public String toString() {
-        return "EmpleadoSeguridad{" + "numSeguridad=" + numSeguridad + ", pabellon=" + pabellon + ", tipoLicenciaArma=" + tipoLicenciaArma + ", nivelEntrenamiento=" + nivelEntrenamiento + ", limitanteFisico=" + limitanteFisico + ", equipoProteccion=" + equipoProteccion + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("NUMERO: ").append(numSeguridad).append("\n");
+        sb.append(super.toString());
+        sb.append("PABELLON:").append(pabellon).append("\n");
+        sb.append("TIPO DE LICENCIA DE ARMA: ").append(tipoLicenciaArma).append("\n");
+        sb.append("NIVEL DE ENTRENAMIENTO: ").append(nivelEntrenamiento).append("\n");
+        sb.append("LIMITANTE FISICO: ").append(limitanteFisico).append("\n");
+        sb.append("EQUIPO DE PROTECCION: ").append(equipoProteccion);
+        return sb.toString();
     }
-
-    
     
 }

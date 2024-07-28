@@ -16,7 +16,7 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
 
         inicial = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cajota = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
 
         inicial.setBackground(new java.awt.Color(102, 153, 255));
@@ -27,9 +27,9 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESA LA CEDULA DEL EMPLEADO:");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        cajota.setBackground(new java.awt.Color(255, 255, 255));
+        cajota.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        cajota.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -52,7 +52,7 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addGroup(inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)))
+                        .addComponent(cajota, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)))
                 .addContainerGap(466, Short.MAX_VALUE))
         );
         inicialLayout.setVerticalGroup(
@@ -61,7 +61,7 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
                 .addGap(142, 142, 142)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cajota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(197, Short.MAX_VALUE))
@@ -80,7 +80,8 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        MostrarEmpleado panelMostrarEmp = new MostrarEmpleado();
+        String cedula = cajota.getText();
+        MostrarEmpleado panelMostrarEmp = new MostrarEmpleado(cedula);
         panelMostrarEmp.setSize(940, 450);
         panelMostrarEmp.setLocation(0, 0);
         
@@ -92,9 +93,9 @@ public class FiltrarEmpleado extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cajota;
     private javax.swing.JPanel inicial;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,6 +36,7 @@ public class PPL extends Persona{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("NUMERO: ").append(numPPL).append("\n");
+        sb.append(super.toString());
         sb.append("ALIAS: ").append(alias).append("\n");
         sb.append("CLASIFICACION: ").append(clasificacion).append("\n");
         sb.append("CELDA: ").append(celda).append("\n");
@@ -45,7 +46,7 @@ public class PPL extends Persona{
         sb.append("PENA ASIGNADA: ").append(penaAsignada).append("\n");
         sb.append("ANIOS RESTANTES: ").append(aniosRestantes).append("\n");
         sb.append("DELITO COMETIDO: ").append(delitoCometido).append("\n");
-        sb.append("VISITAS SEMANALES: ").append(visitasSemanales);
+        sb.append("VISITAS SEMANALES (HORAS): ").append(visitasSemanales);
         return sb.toString();
     }
        

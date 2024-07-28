@@ -22,6 +22,22 @@ public class SistemaAdministracionCarcel {
         }
         return null;
     }
+    //BUSCAR EMPLEADO
+    public Empleado buscarEmpleado(String cedula){
+        ArrayList <Empleado> listaEmp = new ArrayList<>();
+        for(Empleado emp : getLstSeguridad()){
+            if(emp.cedula.equalsIgnoreCase(cedula)){
+                return emp;
+            }
+        }
+        for(Empleado emp : getLstAdministracion()){
+            if(emp.cedula.equalsIgnoreCase(cedula)){
+                return emp;
+            }
+        }
+        return null;
+    }
+    
     //METER A LOS PPL EN SUS RESPECTIVOS PPL
     public void clasificarxPabellonDB() {
         String nombrePabellon;

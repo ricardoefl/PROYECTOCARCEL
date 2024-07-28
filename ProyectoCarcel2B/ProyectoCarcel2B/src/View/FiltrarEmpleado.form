@@ -50,7 +50,7 @@
                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField1" alignment="0" pref="127" max="32767" attributes="0"/>
+                          <Component id="cajota" alignment="0" pref="127" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="466" max="32767" attributes="0"/>
@@ -63,7 +63,7 @@
                   <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="cajota" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" pref="21" max="-2" attributes="0"/>
                   <EmptySpace pref="197" max="32767" attributes="0"/>
@@ -83,7 +83,7 @@
             <Property name="text" type="java.lang.String" value="INGRESA LA CEDULA DEL EMPLEADO:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="cajota">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

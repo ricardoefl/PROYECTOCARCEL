@@ -16,10 +16,16 @@ public class EmpleadoAdministracion extends Empleado{
         this.habilidadesBlandas = habilidadesBlandas;
         this.certificadosAdicionales = certificadosAdicionales;
     }
-
     @Override
     public String toString() {
-        return "EmpleadoAdministracion{" + "numAdministracion=" + numAdministracion + ", nivelAcademico=" + nivelAcademico + ", idiomasHablados=" + idiomasHablados + ", habilidadesBlandas=" + habilidadesBlandas + ", certificadosAdicionales=" + certificadosAdicionales + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("NUMERO: ").append(numAdministracion).append("\n");
+        sb.append(super.toString());
+        sb.append("NIVEL ACADEMICO: ").append(nivelAcademico).append("\n");
+        sb.append("IDIOMAS HABLADOS: ").append(idiomasHablados).append("\n");
+        sb.append("HABILIDADES BLANDAS: ").append(habilidadesBlandas).append("\n");
+        sb.append("CERTIFICADOS ADICIONALES: ").append(certificadosAdicionales);
+        return sb.toString();
     }
     
 }
