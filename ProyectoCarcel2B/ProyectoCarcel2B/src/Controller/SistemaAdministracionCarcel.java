@@ -13,36 +13,36 @@ public class SistemaAdministracionCarcel {
         this.listaPabellones = new ArrayList<>();
         clasificarxPabellonDB();
     }
-    //INGRESAR UN PPL A LA BASE DE DATOS:
+    //ELIMINAR
+    public boolean eliminarEmp(String cedula){
+        if(((new ConeccionDB()).eliminarEmpleadoSeguridad(cedula))||
+                ((new ConeccionDB()).eliminarEmpleadoAdministracion(cedula))){
+        return true;
+    }
+        return false;
+    }
+    public boolean eliminarPPL(String cedula){
+        return (new ConeccionDB()).eliminarPPL(cedula);
+    }
+    //INSERTAR
     public void insertarPPL(PPL ppl){
         (new ConeccionDB()).insertarPPL(ppl);
     }
-    //BUSCAR PPL
+    //BUSCAR:
     public PPL buscarPPL(String cedula){
-        for(PPL ppl : getLstPPL()){
-            if(ppl.cedula.equalsIgnoreCase(cedula)){
-                return ppl;
-            }
-        }
-        return null;
+        return (new ConeccionDB()).consultarPPL(cedula);
     }
-    //BUSCAR EMPLEADO
     public Empleado buscarEmpleado(String cedula){
-        ArrayList <Empleado> listaEmp = new ArrayList<>();
-        for(Empleado emp : getLstSeguridad()){
-            if(emp.cedula.equalsIgnoreCase(cedula)){
-                return emp;
-            }
+        if((new ConeccionDB()).consultarEmpleadoAdministracion(cedula) != null){
+            return (new ConeccionDB()).consultarEmpleadoAdministracion(cedula);
         }
-        for(Empleado emp : getLstAdministracion()){
-            if(emp.cedula.equalsIgnoreCase(cedula)){
-                return emp;
-            }
+        if((new ConeccionDB()).consultarEmpleadoSeguridad(cedula) != null){
+            return (new ConeccionDB()).consultarEmpleadoSeguridad(cedula);
         }
         return null;
     }
     
-    //METER A LOS PPL EN SUS RESPECTIVOS PPL
+    //METER A LOS PPL EN SUS RESPECTIVOS PABELLONES
     public void clasificarxPabellonDB() {
         String nombrePabellon;
         //LISTAS DE PPL
