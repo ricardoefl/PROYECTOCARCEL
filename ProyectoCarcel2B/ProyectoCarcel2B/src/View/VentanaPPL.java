@@ -1,10 +1,5 @@
 package View;
-import Model.*;
-import Controller.*;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.text.AbstractDocument;
 
 public class VentanaPPL extends javax.swing.JFrame {
     public VentanaPPL() {
@@ -172,7 +167,14 @@ public class VentanaPPL extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        FiltrarPPL panelFiltrar = new FiltrarPPL();
+        panelFiltrar.setSize(940, 450);
+        panelFiltrar.setLocation(13, 0);
+        
+        dinamico.removeAll();
+        dinamico.add(panelFiltrar, BorderLayout.CENTER);
+        dinamico.revalidate();
+        dinamico.repaint();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -180,7 +182,14 @@ public class VentanaPPL extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        SacarPPL panelEliminarPPL = new SacarPPL();
+        panelEliminarPPL.setSize(940, 450);
+        panelEliminarPPL.setLocation(13, 0);
+        
+        dinamico.removeAll();
+        dinamico.add(panelEliminarPPL, BorderLayout.CENTER);
+        dinamico.revalidate();
+        dinamico.repaint();
     }//GEN-LAST:event_jButton7ActionPerformed
 
 

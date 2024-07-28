@@ -32,10 +32,10 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jScrollPane1" alignment="0" pref="890" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -62,7 +62,7 @@
             <Component class="javax.swing.JTable" name="listaCompleta">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="17" rowCount="0">
+                  <Table columnCount="18" rowCount="0">
                     <Column editable="true" title="#Empleado" type="java.lang.Object"/>
                     <Column editable="true" title="Nombre" type="java.lang.Object"/>
                     <Column editable="true" title="Cedula" type="java.lang.Object"/>
@@ -72,24 +72,30 @@
                     <Column editable="true" title="Cargo" type="java.lang.Object"/>
                     <Column editable="true" title="Salario" type="java.lang.Object"/>
                     <Column editable="true" title="HorasTrabajadas" type="java.lang.Object"/>
-                    <Column editable="true" title="Valorxhora" type="java.lang.Object"/>
+                    <Column editable="true" title="ValorxHora" type="java.lang.Object"/>
                     <Column editable="true" title="Telefono" type="java.lang.Object"/>
                     <Column editable="true" title="FechaContratacion" type="java.lang.Object"/>
                     <Column editable="true" title="AniosTrabajados" type="java.lang.Object"/>
-                    <Column editable="true" title="NivelAcademico" type="java.lang.Object"/>
-                    <Column editable="true" title="HabilidadesBlandas" type="java.lang.Object"/>
-                    <Column editable="true" title="IdiomasHablados" type="java.lang.Object"/>
-                    <Column editable="true" title="CertificacionesAdicionales" type="java.lang.Object"/>
+                    <Column editable="true" title="Pabellon" type="java.lang.Object"/>
+                    <Column editable="true" title="LicenciaArma" type="java.lang.Object"/>
+                    <Column editable="true" title="NivelEntrenamiento" type="java.lang.Object"/>
+                    <Column editable="true" title="LimitanteFisico" type="java.lang.Object"/>
+                    <Column editable="true" title="EquipoProteccion" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="310" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="155" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -186,7 +192,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="LISTA COMPLETA DE EMPLEADOS DE ADMINISTRACION  -  PENITENCIARIA DE LOJA"/>
+            <Property name="text" type="java.lang.String" value="LISTA DE EMPLEADOS DE SEGURIDAD  -  PABELLON &quot;SOMBRA&quot; - MEDIA PELIGROSIDAD"/>
           </Properties>
         </Component>
       </SubComponents>

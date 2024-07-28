@@ -1,10 +1,5 @@
 package View;
-import Model.*;
-import Controller.*;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.text.AbstractDocument;
 
 public class VentanaEmpleados extends javax.swing.JFrame {
     public VentanaEmpleados() {
@@ -172,7 +167,14 @@ public class VentanaEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        FiltrarEmpleado panelFiltrar = new FiltrarEmpleado();
+        panelFiltrar.setSize(940, 450);
+        panelFiltrar.setLocation(13, 0);
+        
+        dinamico.removeAll();
+        dinamico.add(panelFiltrar, BorderLayout.CENTER);
+        dinamico.revalidate();
+        dinamico.repaint();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -180,7 +182,14 @@ public class VentanaEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        SacarEmpleado panelEliminarEmp = new SacarEmpleado();
+        panelEliminarEmp.setSize(940, 450);
+        panelEliminarEmp.setLocation(13, 0);
+        
+        dinamico.removeAll();
+        dinamico.add(panelEliminarEmp, BorderLayout.CENTER);
+        dinamico.revalidate();
+        dinamico.repaint();
     }//GEN-LAST:event_jButton7ActionPerformed
 
 

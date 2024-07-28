@@ -45,7 +45,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="198" max="32767" attributes="0"/>
+                  <EmptySpace pref="147" max="32767" attributes="0"/>
                   <Component id="tipoLista" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="mostrar" min="-2" max="-2" attributes="0"/>
@@ -76,9 +76,13 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="LISTA ADMINISTRACION"/>
-                <StringItem index="1" value="LISTA SEGURIDAD"/>
+              <StringArray count="6">
+                <StringItem index="0" value="LISTA SEGURIDAD PABELLON 1"/>
+                <StringItem index="1" value="LISTA SEGURIDAD PABELLON 2"/>
+                <StringItem index="2" value="LISTA SEGURIDAD PABELLON 3"/>
+                <StringItem index="3" value="LISTA SEGURIDAD PABELLON 4"/>
+                <StringItem index="4" value="LISTA SEGURIDAD COMPLETA"/>
+                <StringItem index="5" value="LISTA ADMINISTRACION"/>
               </StringArray>
             </Property>
           </Properties>

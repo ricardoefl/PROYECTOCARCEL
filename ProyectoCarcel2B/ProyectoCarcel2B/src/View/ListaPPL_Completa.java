@@ -30,16 +30,26 @@ public class ListaPPL_Completa extends javax.swing.JPanel {
             new String [] {
                 "#PPL", "Nombre", "Cedula", "Edad", "LugarNacimiento", "Genero", "Alias", "Clasificacion", "Celda", "Pabellon", "FechaIngreso", "FechaSalida", "Pena", "AniosRestantes", "Delito", "VisitasSemanales"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(listaCompleta);
+        if (listaCompleta.getColumnModel().getColumnCount() > 0) {
+            listaCompleta.getColumnModel().getColumn(0).setPreferredWidth(60);
+            listaCompleta.getColumnModel().getColumn(1).setPreferredWidth(310);
+            listaCompleta.getColumnModel().getColumn(2).setPreferredWidth(155);
+            listaCompleta.getColumnModel().getColumn(3).setPreferredWidth(60);
+            listaCompleta.getColumnModel().getColumn(4).setPreferredWidth(150);
+            listaCompleta.getColumnModel().getColumn(5).setPreferredWidth(100);
+            listaCompleta.getColumnModel().getColumn(6).setPreferredWidth(100);
+            listaCompleta.getColumnModel().getColumn(7).setPreferredWidth(150);
+            listaCompleta.getColumnModel().getColumn(8).setPreferredWidth(50);
+            listaCompleta.getColumnModel().getColumn(9).setPreferredWidth(135);
+            listaCompleta.getColumnModel().getColumn(10).setPreferredWidth(100);
+            listaCompleta.getColumnModel().getColumn(11).setPreferredWidth(100);
+            listaCompleta.getColumnModel().getColumn(12).setPreferredWidth(50);
+            listaCompleta.getColumnModel().getColumn(13).setPreferredWidth(50);
+            listaCompleta.getColumnModel().getColumn(14).setPreferredWidth(120);
+            listaCompleta.getColumnModel().getColumn(15).setPreferredWidth(50);
+        }
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));

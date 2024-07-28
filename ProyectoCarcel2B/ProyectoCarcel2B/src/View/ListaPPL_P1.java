@@ -32,16 +32,16 @@ public class ListaPPL_P1 extends javax.swing.JPanel {
             new String [] {
                 "#PPL", "Nombre", "Cedula", "Edad", "LugarNacimiento", "Genero", "Alias", "Clasificacion", "Celda", "Pabellon", "FechaIngreso", "FechaSalida", "Pena", "AniosRestantes", "Delito", "VisitasSemanales"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(listaCompleta);
+        if (listaCompleta.getColumnModel().getColumnCount() > 0) {
+            listaCompleta.getColumnModel().getColumn(0).setPreferredWidth(60);
+            listaCompleta.getColumnModel().getColumn(1).setPreferredWidth(310);
+            listaCompleta.getColumnModel().getColumn(2).setPreferredWidth(155);
+            listaCompleta.getColumnModel().getColumn(3).setPreferredWidth(60);
+            listaCompleta.getColumnModel().getColumn(9).setPreferredWidth(135);
+            listaCompleta.getColumnModel().getColumn(14).setPreferredWidth(120);
+        }
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -89,7 +89,7 @@ public class ListaPPL_P1 extends javax.swing.JPanel {
         ArrayList<PPL> listaPPLaux = new ArrayList<PPL>();
         SistemaAdministracionCarcel sistema = new SistemaAdministracionCarcel();
         listaPPL = sistema.getListaPabellones().get(0).listaPPL;
-        listaPPLaux =sistema.cambiarNumeracion(listaPPL);
+        listaPPLaux =sistema.cambiarNumeracionPPL(listaPPL);
         for (PPL ppl : listaPPLaux) 
             this.modelo.addRow(new Object[]{ppl.numPPL, ppl.nombreCompleto, 
                 ppl.cedula, ppl.edad, ppl.lugarNacimiento, ppl.genero, ppl.alias, 

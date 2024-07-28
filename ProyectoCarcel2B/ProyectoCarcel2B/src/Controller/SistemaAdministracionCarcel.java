@@ -14,53 +14,87 @@ public class SistemaAdministracionCarcel {
         this.listaPabellones = new ArrayList<>();
         clasificarxPabellonDB();
     }
-    
-
     //METER A LOS PPL EN SUS RESPECTIVOS PPL
     public void clasificarxPabellonDB() {
         String nombrePabellon;
-        ArrayList<PPL> redencion = new ArrayList<>();
-        ArrayList<PPL> fraternidad = new ArrayList<>();
-        ArrayList<PPL> sombra = new ArrayList<>();
-        ArrayList<PPL> inquisicion = new ArrayList<>();
+        //LISTAS DE PPL
+        ArrayList<PPL> redencionPPL = new ArrayList<>();
+        ArrayList<PPL> fraternidadPPL = new ArrayList<>();
+        ArrayList<PPL> sombraPPL = new ArrayList<>();
+        ArrayList<PPL> inquisicionPPL = new ArrayList<>();
+        
+        //LISTAS DE EMPLEADOS DE SEGURIDAD
+        ArrayList<EmpleadoSeguridad> redencionSeguridad = new ArrayList<>();
+        ArrayList<EmpleadoSeguridad> fraternidadSeguridad = new ArrayList<>();
+        ArrayList<EmpleadoSeguridad> sombraSeguridad = new ArrayList<>();
+        ArrayList<EmpleadoSeguridad> inquisicionSeguridad = new ArrayList<>();
         
         for (PPL ppl : getLstPPL()) {
             nombrePabellon = ppl.pabellon;
             switch (nombrePabellon) {
                 case "Inquisicion":
-                    inquisicion.add(ppl);
+                    inquisicionPPL.add(ppl);
                     break;
                 case "Sombra":
-                    sombra.add(ppl);
+                    sombraPPL.add(ppl);
                     break;
                 case "Fraternidad":
-                    fraternidad.add(ppl);
+                    fraternidadPPL.add(ppl);
                     break;
                 case "Redencion":
-                    redencion.add(ppl);
+                    redencionPPL.add(ppl);
+                    break;
+            }
+        }
+        for (EmpleadoSeguridad emp : getLstSeguridad()) {
+            nombrePabellon = emp.pabellon;
+            switch (nombrePabellon) {
+                case "Inquisicion":
+                    inquisicionSeguridad.add(emp);
+                    break;
+                case "Sombra":
+                    sombraSeguridad.add(emp);
+                    break;
+                case "Fraternidad":
+                    fraternidadSeguridad.add(emp);
+                    break;
+                case "Redencion":
+                    redencionSeguridad.add(emp);
                     break;
             }
         }
         Pabellon PabellonRedencion = new Pabellon("Redencion", 
-                "Baja Peligrosidad", redencion);
+                "Baja Peligrosidad", redencionSeguridad, 
+                redencionPPL);
         Pabellon PabellonFraternidad = new Pabellon("Fraternidad", 
-                "Baja Peligrosidad", fraternidad);
+                "Baja Peligrosidad", fraternidadSeguridad,
+                fraternidadPPL);
         Pabellon PabellonSombra = new Pabellon("Sombra", 
-                "Media Peligrosidad", sombra);
+                "Media Peligrosidad", sombraSeguridad,
+                sombraPPL);
         Pabellon PabellonInquisicion = new Pabellon("Redencion", 
-                "Maxima Peligrosidad", inquisicion);
+                "Maxima Peligrosidad", inquisicionSeguridad, 
+                inquisicionPPL);
         
-        this.listaPabellones.add(PabellonInquisicion); // 0
+        this.listaPabellones.add(PabellonInquisicion); // 0 
         this.listaPabellones.add(PabellonSombra); // 1
         this.listaPabellones.add(PabellonFraternidad); // 2
         this.listaPabellones.add(PabellonRedencion); // 3
     }
     //CAMBIAR NUMEROS DE PPL CUANDO SE MUESTRAN POR PABELLONES
-    public ArrayList<PPL> cambiarNumeracion(ArrayList<PPL> listaPPL){
+    public ArrayList<PPL> cambiarNumeracionPPL(ArrayList<PPL> listaPPL){
         for (int i = 0; i < listaPPL.size(); i++) {
             listaPPL.get(i).numPPL = (i+1);
         }
         return listaPPL;
+    }
+    //CAMBIAR NUMEROS DE EMPLEADOS DE SEGURIDAD CUANDO SE MUESTRAN POR PABELLONES
+    public ArrayList<EmpleadoSeguridad> cambiarNumeracionSeg(
+            ArrayList<EmpleadoSeguridad> listaSeguridad){
+        for (int i = 0; i < listaSeguridad.size(); i++) {
+            listaSeguridad.get(i).numSeguridad = (i+1);
+        }
+        return listaSeguridad;
     }
     
     public ArrayList<Pabellon> getListaPabellones() {

@@ -1,15 +1,16 @@
 package View;
 
 import Controller.SistemaAdministracionCarcel;
-import Model.EmpleadoAdministracion;
+import Model.EmpleadoSeguridad;
+import Model.PPL;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Lista_Administracion extends javax.swing.JPanel {
+public class Lista_Seguridad_Pab2 extends javax.swing.JPanel {
     DefaultTableModel modelo;
     
-    public Lista_Administracion() {
+    public Lista_Seguridad_Pab2() {
         initComponents();
         modelo = (DefaultTableModel) this.listaCompleta.getModel();
         mostrarTabla();
@@ -28,24 +29,29 @@ public class Lista_Administracion extends javax.swing.JPanel {
 
             },
             new String [] {
-                "#Empleado", "Nombre", "Cedula", "Edad", "LugarNacimiento", "Genero", "Cargo", "Salario", "HorasTrabajadas", "Valorxhora", "Telefono", "FechaContratacion", "AniosTrabajados", "NivelAcademico", "HabilidadesBlandas", "IdiomasHablados", "CertificacionesAdicionales"
+                "#Empleado", "Nombre", "Cedula", "Edad", "LugarNacimiento", "Genero", "Cargo", "Salario", "HorasTrabajadas", "ValorxHora", "Telefono", "FechaContratacion", "AniosTrabajados", "Pabellon", "LicenciaArma", "NivelEntrenamiento", "LimitanteFisico", "EquipoProteccion"
             }
         ));
         jScrollPane1.setViewportView(listaCompleta);
+        if (listaCompleta.getColumnModel().getColumnCount() > 0) {
+            listaCompleta.getColumnModel().getColumn(0).setPreferredWidth(60);
+            listaCompleta.getColumnModel().getColumn(1).setPreferredWidth(310);
+            listaCompleta.getColumnModel().getColumn(2).setPreferredWidth(155);
+        }
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("LISTA COMPLETA DE EMPLEADOS DE ADMINISTRACION  -  PENITENCIARIA DE LOJA");
+        jLabel2.setText("LISTA DE EMPLEADOS DE SEGURIDAD  -  PABELLON \"SOMBRA\" - MEDIA PELIGROSIDAD");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
                 .addComponent(jLabel2)
-                .addGap(101, 101, 101))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,15 +77,18 @@ public class Lista_Administracion extends javax.swing.JPanel {
     public void mostrarTabla(){
         while(modelo.getRowCount() > 0)
         this.modelo.removeRow(0);
-        ArrayList<EmpleadoAdministracion> listaAdministracion = new ArrayList<EmpleadoAdministracion>();
+        ArrayList<EmpleadoSeguridad> listaSeguridad = new ArrayList<EmpleadoSeguridad>();
+        ArrayList<EmpleadoSeguridad> listaSeguridadAux = new ArrayList<EmpleadoSeguridad>();
         SistemaAdministracionCarcel sistema = new SistemaAdministracionCarcel();
-        listaAdministracion = sistema.getLstAdministracion();
-        for (EmpleadoAdministracion emp: listaAdministracion) 
-            this.modelo.addRow(new Object[]{emp.numAdministracion, emp.nombreCompleto, 
+        listaSeguridad = sistema.getListaPabellones().get(1).listaEmpleadoSeguridad;
+        listaSeguridadAux = sistema.cambiarNumeracionSeg(listaSeguridad);
+        for (EmpleadoSeguridad emp: listaSeguridadAux) 
+            this.modelo.addRow(new Object[]{emp.numSeguridad, emp.nombreCompleto, 
                 emp.cedula, emp.edad, emp.lugarNacimiento, emp.genero, emp.cargo, 
                 emp.salario, emp.horasTrabajadas, emp.valorXHora, emp.telefonoContacto, 
-                emp.fechaContratacion, emp.aniosTrabajados, emp.nivelAcademico, 
-                emp.habilidadesBlandas, emp.idiomasHablados, emp.certificadosAdicionales});
+                emp.fechaContratacion, emp.aniosTrabajados, emp.pabellon, 
+                emp.tipoLicenciaArma, emp.nivelEntrenamiento, emp.limitanteFisico,
+                emp.equipoProteccion});
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
